@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<ion-view view-title="Cadastro de usuario">
+  <ion-content ng-controller="CadUserCtrl">
+      <form name="formUsuario" >
+          <div class="item-divider-android">            
+              <label class="item item-input item-stacked-label">
+                  <span class="input-label">Nome</span>
+                  <input type="text" required class="form-control" id="nome" name="nome"
+                         ng-model="cu.newObject.nome" />
+              </label>
+              <label class="item item-input item-stacked-label">
+                  <span class="input-label">Sobrenome</span>
+                  <input type="text" class="form-control" id="sobrenome" name="sobrenome"
+                         ng-model="cu.newObject.sobrenome" required />
+              </label>
+              <label class="item item-input item-stacked-label">
+                  <span class="input-label">Email</span>
+                  <input type="text" class="form-control" id="email" name="email"
+                         ng-model="cu.newObject.email" required
+                         ng-onblur="cu.validacaoEmail(formUsuario.email)" />
+             </label>
+             <label class="item item-input item-stacked-label">
+                  <span class="input-label">Senha</span>
+                  <input type="password" class="form-control" id="senha" name="senha"
+                         ng-model="cu.newObject.senha" required />
+            </label>
+            <label class="item item-input item-stacked-label">
+                  <span class="input-label">Confirme sua senha</span>
+                  <input type="password" required
+                         id="confirmaSenha" name="confirmaSenha" />
+            </label>
+                          
+            <input class="button button-block button-positive" type="submit" ng-click="cu.create(cu.newObject)" value="Cadastrar" />            
+        </div>       
+      </form>
+  </ion-content>
+</ion-view>

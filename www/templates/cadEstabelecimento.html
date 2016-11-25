@@ -1,0 +1,29 @@
+﻿<ion-view view-title="Cadastro de estabelecimento">
+    <ion-content ng-controller="CadEstabCrtl">
+        <form name="formEstabelecimentos">
+            <div class="item-divider-android">
+                
+                <input type="text" required class="form-control" id="nome" name="nome"
+                       ng-model="ce.newObject.nome" placeholder="Nome" />
+                                
+                <input type="text" class="form-control" id="latitude" name="latitude"
+                       ng-model="ce.newObject.latitude" placeholder="Latitude" required />
+                                
+                <input type="text" class="form-control" id="longitude" name="longitude"
+                       ng-model="ce.newObject.longitude" placeholder="Longitude" required />                       
+                
+                <input list="browsers" />
+
+                <datalist id="browsers">
+                    <option value="Internet Explorer">
+                    <option value="Firefox">
+                    <option value="Chrome">
+                    <option value="Opera">
+                    <option value="Safari">
+                </datalist>
+
+                <input type="submit" class="button button-block button-positive" ng-click="ce.create(ce.newObject)" value="Cadastrar" />
+            </div>
+        </form>
+    </ion-content>
+</ion-view>
