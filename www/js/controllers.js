@@ -144,7 +144,7 @@ angular.module('starter.controllers', [])
 
         $scope.search = new google.maps.Map(document.getElementById("mapa"), mapOptions);
 
-        // Marcação de pontos cadastrados no mapa
+        // Marcação de pontos cadastrados no mapa 
         EstabelecimentosModel.all().then(function success(est) {
             var estabelecimento = est;            
 
