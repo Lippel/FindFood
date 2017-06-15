@@ -1,0 +1,15 @@
+<ion-view view-title="Estabelecimentos">
+    <ion-content class="padding has-header">
+        <div class="bar-balanced">
+            <ion-list>
+                <ion-item ng-repeat="estab in ce.data" href="#/app/estabelecimentos/{{estab.id}}">
+                    <div class="ion-item">
+                      <div><b>{{estab.nome}}</b></div>
+                    </div>
+                  <div class="ion-item">
+                  </div>
+                </ion-item>
+          </ion-list>
+        </div>
+    </ion-content>
+</ion-view>

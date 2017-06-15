@@ -31,11 +31,12 @@ angular.module('starter', ['ionic', 'ngCordova', 'backand', 'starter.controllers
     $stateProvider
 
     .state('app', {
-    url: '/app',
-    abstract: true,
-    templateUrl: 'templates/menu.html',
-    controller: 'AppCtrl'
-  })
+        url: '/app',
+        abstract: true,
+        templateUrl: 'templates/menu.html',
+        controller: 'AppCtrl'
+    })
+
 
   .state('app.search', {
     url: '/search',
@@ -52,7 +53,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'backand', 'starter.controllers
     views: {
         'menuContent': {
             templateUrl: 'templates/cadUsuario.html',
-            controller: 'CadUserCtrl as cu'
+            controller: 'CadUserCtrl as cu',            
         }
     }
 })
@@ -66,6 +67,48 @@ angular.module('starter', ['ionic', 'ngCordova', 'backand', 'starter.controllers
         }
     }
 })
+
+.state('app.estabelecimentos', {
+    url: '/estabelecimentos',
+    views: {
+        'menuContent': {
+            templateUrl: 'templates/estabelecimentos.html',
+            controller: 'CadEstabCrtl as ce'
+        }
+    }
+})
+
+.state('app.estabelecimento', {
+    url: '/estabelecimentos/:id',
+    views: {
+        'menuContent': {
+            templateUrl: 'templates/estabelecimento.html',
+            controller: 'CadEstabCrtl as ce'
+        }
+    }
+})
+
+.state('app.CadAvaliacao', {
+    url: '/CadAvaliacao/:idEstab',
+    views: {
+        'menuContent': {
+            templateUrl: 'templates/CadAvaliacao.html',
+            controller: 'CadAvaliacoesCtrl as ca'
+        }
+    }
+})
+
+.state('app.avaliacao', {
+    url: '/avaliacoes/:id',
+    views: {
+        'menuContent': {
+            templateUrl: 'templates/avaliacao.html',
+            controller: 'AvaliacoesCtrl as avas'
+        }
+    }
+})
+
+
   // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/search');
 

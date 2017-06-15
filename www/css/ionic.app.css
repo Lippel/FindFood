@@ -9666,6 +9666,13 @@ a.button {
   -webkit-transition: all ease-in-out 250ms;
   transition: all ease-in-out 250ms; }
 
+  .vertical-align-content > *
+  {
+       display: flex!important;
+       align-content: center!important;
+       align-items: center!important;
+  }
+
 @-webkit-keyframes scaleOut {
   from {
     -webkit-transform: scale(1);

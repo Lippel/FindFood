@@ -1,12 +1,9 @@
 <ion-modal-view>
-  <ion-header-bar>
-    <h1 class="title">Login</h1>
-    <div class="buttons">
-      <button class="button button-clear" ng-click="closeLogin()">Close</button>             
-    </div>
-  </ion-header-bar>
-  <ion-content>    
+  <ion-content>
     <form>
+      <div class="popup-head">
+          <img ng-src="img/logo-find-food.jpg" style="width:199px;height:130px;" >
+      </div>
       <div class="list">
         <label class="item item-input">
           <span class="input-label">Email</span>
@@ -17,13 +14,13 @@
           <input type="password" ng-model="loginData.password">
         </label>
         <label class="item">
-          <button class="button button-block button-positive" ng-click="doLogin()" type="submit">Entrar</button>           
-        </label>        
-          <div class="buttons">
-              <button class="button" ng-click="closeLogin()">Esqueceu sua senha?</button>
-              <a href="" 
-          </div>
-      </div>      
+          <button class="button button-block button-positive" ng-click="doLogin()" type="submit">Entrar</button>
+        </label>
+        <div class="buttons">
+          <button class="button" ng-click="cadUser()">Cadastrar-se</button>          
+        </div>
+
+      </div>
     </form>
   </ion-content>
 </ion-modal-view>

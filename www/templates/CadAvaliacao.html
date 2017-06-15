@@ -1,0 +1,36 @@
+<ion-view view-title="Nova avaliação">
+  <ion-content class="padding has-header" ng-controller="CadAvaliacoesCtrl">
+      <div class="bar-balanced">
+          <form name="CadAvaliacao">
+              <div class="list">
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">{{ca.estabelecimento.nome}}</span>
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Título</span>
+                    <input type="text" required class="form-control" id="titulo" name="titulo"
+                           ng-model="ca.newObject.titulo" />
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Descrição</span>
+                    <textarea type="text" required class="form-control" id="descricao" name="descricao"
+                           ng-model="ca.newObject.descricao" />
+                    </textarea>
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Nota</span>
+                    <input type="text" required class="form-control" id="nota" name="nota"
+                           ng-model="ca.newObject.nota" />
+                </label>
+
+              </div>
+              <!--<script> document.getElementById("estabelecimento").defaultValue = "3"; </script>-->
+              <input type="submit" class="button button-block button-positive" ng-click="ca.create(ca.newObject)" value="Cadastrar" />
+          </form>
+      </div>
+  </ion-content>
+</ion-view>

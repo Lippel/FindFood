@@ -1,0 +1,52 @@
+<ion-view view-title="Estabelecimentos">
+        <ion-content class="padding has-header">
+            <div class="bar bar-header bar-secondary">
+                <h1 class="title">{{ce.data.nome}}</h1>
+            </div><br><br><br>
+            <div class="bar-balanced">
+                <form class="edit-form" role="form"
+                      ng-submit="ce.update(ce.edited)" novalidate>
+                    <div class="list">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Nome</span>
+                            <input type="text" class="form-control"
+                                   ng-model="ce.data.nome"
+                                   placeholder="Preencha o nome">
+                        </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Descrição</span>
+                            <textarea class="form-control"
+                                      ng-model="ce.data.descricao"
+                                      placeholder="Descrição"></textarea>
+                        </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Telefone</span>
+                            <input type="text" class="form-control"
+                                   ng-model="ce.data.telefone"
+                                   placeholder="Enter name">
+                        </label>
+                    </div>
+                    <button class="button button-block button-positive" type="submit">Salvar</button>
+                </form>
+                <ion-list>
+                    <div class="bar bar-header bar-secondary">
+                        <div ng-if="ce.usuarioLogado != null">
+                            <a href="#/app/CadAvaliacao/{{ce.data.id}}"><i class='icon ion-plus-round new-item'>Nova avaliação</i></a>
+                        </div>
+                        <h1 class="title">Avaliações</h1>
+                    <!--<span ng-click="vm.cancelEditing()" class="cancel-create">Cancel</span>-->
+                  </div>
+                    <br><br><br>
+                    <ion-item ng-repeat="avaliacao in ce.avaliacao" href="#/app/avaliacoes/{{avaliacao.id}}">
+                      <div class="ion-item">
+                        <div><b>{{avaliacao.titulo}}: {{avaliacao.nota}}</b></div>
+                        <div>{{avaliacao.descricao}}</div>
+                      </div>
+                      <div class="ion-item">
+
+                      </div>
+                    </ion-item><br>
+                </ion-list>
+            </div>
+        </ion-content>
+</ion-view>
